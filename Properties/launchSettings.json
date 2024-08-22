@@ -1,0 +1,38 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:40678",
+      "sslPort": 44358
+    }
+  },
+  "profiles": {
+    "BankingSystemAPI": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:7238;http://localhost:5008",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CLIENT":"mongodb://localhost:27017",
+        "DATABASE":"BankingSystemLF",
+        "BANKCOLLECTION":"bank",
+        "BRANCHCOLLECTION":"branch",
+        "ACCOUNTCOLLECTION":"accounts",
+        "TRANSACTIONCOLLECTION":"transactions"
+
+      }
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

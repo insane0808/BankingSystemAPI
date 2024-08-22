@@ -1,0 +1,23 @@
+#Making Services
+services:
+
+  bankingsystemservice:
+     build: . #building the whole project
+     ports:
+       - 5008:80  #to be running on this port
+     environment:  #Some Environment Varables
+      CLIENT: 'mongodb://172.17.0.1:27017'
+      ACCOUNTCOLLECTION: 'accounts'
+      TRANSACTIONCOLLECTION: 'transactions'
+      BRANCHCOLLECTION: 'branch'
+      BANKCOLLECTION: 'bank'
+      DATABASE: 'BankingSystemLF'
+  
+  #Adding MongoDB Service to the container
+  mongodb:
+     build: . 
+     image: mongo #using mongo image for this service
+     ports:
+      - 27017:27017 #Port to access the mongodb service
+     volumes:
+      - ~/apps/mongo:/data/db  #Place where the data will be stored
